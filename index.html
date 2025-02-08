@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Chat App</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <header>
+          <div class="header-icons">
+            <button id="menuButton"><i class="fas fa-bars"></i></button>
+            <button id="toggleMode"><i class="fas fa-moon"></i></button>
+          </div>
+        </header>
+        <main class="main">
+          <div id="conversation" class="conversation"></div>
+        </main>
+        <footer>
+          <input type="text" id="messageInput" class="message-input" placeholder="Type your message...">
+          <button id="talkButton" class="talk-button"><i class="fas fa-microphone"></i></button>
+        </footer>
+      </div>
+      <div id="applet" class="applet">
+        <div class="settings-panel">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <button id="closeSettings"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="settings-content">
+            <div class="setting-item">
+              <label for="modelSelect">Model</label>
+              <select id="modelSelect">
+                <option value="deepseek/deepseek-r1-distill-llama-70b">DeepSeek R1 Distill</option>
+                <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash</option>
+                <option value="google/gemini-2.0-flash-thinking-exp-1219:free">Gemini 2.0 Flash 1219</option>
+                <option value="google/learnlm-1.5-pro-experimental:free">LearnLM 1.5 Pro</option>
+                <option value="deepseek/deepseek-r1">DeepSeek R1</option>
+                <option value="deepseek/deepseek-chat">DeepSeek Chat</option>
+                <option value="qwen/qvq-72b-preview">Qwen QVQ-72B</option>
+                <option value="qwen/qwen-2.5-coder-32b-instruct">Qwen 2.5 Coder</option>
+                <option value="anthracite-org/magnum-v4-72b">Magnum V4 72B</option>
+              </select>
+            </div>
+            <div class="setting-item">
+              <label for="apiKeyInput">OpenRouter API Key</label>
+              <input type="text" id="apiKeyInput" required>
+            </div>
+            <div class="setting-item">
+              <label for="userInfoInput">User Info</label>
+              <textarea id="userInfoInput" placeholder="What you should know about me"></textarea>
+            </div>
+            <div class="setting-item">
+              <label for="responseInstructionsInput">Response Instructions</label>
+              <textarea id="responseInstructionsInput" placeholder="How you will respond"></textarea>
+            </div>
+            <div class="setting-item">
+              <label for="aiSpeechToggle">Enable AI Speech</label>
+              <input type="checkbox" id="aiSpeechToggle">
+            </div>
+            <button id="saveSettings">Save Settings</button>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+    </body>
+    </html>
