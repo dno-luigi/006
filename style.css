@@ -60,6 +60,7 @@ body {
   overflow-y: auto;
   background-color: #f4f4f4; /* Light background in light mode */
   transition: background-color 0.3s ease;
+  color: #333333; /* Dark text in light mode */
 }
 
 .conversation {
@@ -92,7 +93,7 @@ body {
 
 .ai-message {
   align-self: flex-start;
-  color: #333333; /* Dark text in light mode */
+  color: #333333; /* Match user text color in light mode */
 }
 
 .footer {
@@ -120,6 +121,7 @@ body {
 
 .message-input::placeholder {
   color: #666666; /* Dark placeholder in light mode */
+  content: '...as you wish'; /* Placeholder text */
 }
 
 .message-input:focus {
@@ -173,6 +175,11 @@ body {
   color: #f7fafc; /* Light text in dark mode */
 }
 
+.dark-mode .main {
+  background-color: #000000; /* Black background for main display in dark mode */
+  color: #f7fafc; /* Light text in dark mode */
+}
+
 .dark-mode .header-icons button {
   color: #f7fafc; /* Light text in dark mode */
 }
@@ -197,21 +204,21 @@ body {
 .settings-header h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #f7fafc; /* Light text in dark mode */
+  color: #333333; /* Dark text in light mode */
 }
 
 .settings-header button {
   background: none;
   border: none;
-  color: #f7fafc; /* Light text in dark mode */
+  color: #333333; /* Dark text in light mode */
   font-size: 1.2rem;
   cursor: pointer;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .settings-header button:hover {
-  color: #e2e8f0; /* Lighter text on hover in dark mode */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  color: #666666; /* Dark hover text in light mode */
+  text-shadow: 0 0 10px rgba(102, 102, 102, 0.5);
 }
 
 .settings-content {
@@ -229,7 +236,7 @@ body {
 .setting-item label {
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #f7fafc; /* Light text in dark mode */
+  color: #333333; /* Dark text in light mode */
 }
 
 .setting-item input,
